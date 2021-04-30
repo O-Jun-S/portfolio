@@ -25,7 +25,7 @@ function create_enemies() {
 
     for(let y=1; y<=row; y++) {
         for(let x=1; x<=column; x++) {
-            let pV = new Vec2(40+50*x, 40+50*y);
+            let pV = new Vec2(70+50*x, 40+50*y);
             let enemy = new Enemy(pV, new Vec2(0, 0), 15, color("#F04C4C"));
             enemies.push(enemy);
         }
@@ -85,7 +85,7 @@ class Player {
         bullets.push(bullet);
 
         // 10フレームに1回しか撃てない
-        shotFrame = 10;
+        shotFrame = 30;
     }
 }
 
@@ -137,7 +137,9 @@ class Enemy {
     }
 
     move() {
-        this.vV = new Vec2(cos(frameCount/50)*70, sin(frameCount/50)*30);
+        // cosに適当な引数を与え、横運動させる。
+        // 最後のframeCount/1000は、前進させるためである。
+        this.vV = new Vec2(cos(frameCount/50)*120, frameCount/500);
         this.pV = this.pV.add(this.vV.div(60));
     }
 }
@@ -218,7 +220,8 @@ function draw() {
             let enemy = enemies[i];
             let bullet = bullets[j];
 
-            if(enemy.isOn(bullet)) {
+            // 乱射時、enemyにisOnメゾットがないと判断されたため
+            if(enemy instanceof Enemy && enemy.isOn(bullet)) {
                 enemies.splice(i, 1);
                 bullets.splice(j, 1);
                 scoreboard.score += 10;
