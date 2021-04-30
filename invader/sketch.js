@@ -81,7 +81,9 @@ class Player {
         }
 
         let vV = new Vec2(0, -200);
-        let bullet = new Bullet(this.pV, vV, 10);
+
+        // 自機の半径を考慮し、発射
+        let bullet = new Bullet(this.pV.add(new Vec2(0, -this.r)), vV, 10);
         bullets.push(bullet);
 
         // 10フレームに1回しか撃てない
