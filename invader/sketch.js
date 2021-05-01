@@ -140,7 +140,7 @@ class Enemy {
 
     move() {
         // cosに適当な引数を与え、横運動させる。
-i        // 最後のframeCount/500は、前進させるためである。
+        // 最後のframeCount/500は、前進させるためである。
         this.vV = new Vec2(cos(frameCount/50)*120, frameCount/500);
         this.pV = this.pV.add(this.vV.div(60));
     }
