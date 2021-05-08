@@ -1,0 +1,16 @@
+body {
+    background: #eeeeee;
+}
+
+.hero {
+    background: #d8f2f3;
+}
+
+.lang-title {
+    border-bottom: solid 1px;
+    padding: 20px;
+}
+
+.lang-explain {
+    background: #eeffff;
+}
