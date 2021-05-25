@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>文字化け</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+	<script src="../js/navbar.js"></script>
+	<link rel="stylesheet" href="mojibake.css">
+</head>
+<body>
+	<nav class="navbar" role="navigation" aria-label="main navigation">
+		<div class="navbar-brand">
+			<p class="navbar-item">
+				O-Jun
+			</p>
+
+			<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar">
+				<span aria-hidden="true"></span>
+				<span aria-hidden="true"></span>
+				<span aria-hidden="true"></span>
+			</a>
+		</div>
+
+		<nav id="navbar" class="navbar-menu">
+			<div class="navbar-start">
+				<a class="navbar-item" href="index.html">
+					Home
+				</a>
+
+				<a class="navbar-item" href="applications.html">
+					Applications
+				</a>
+			</div>
+		</nav>
+	</nav>
+
+	<section class="hero">
+		<div class="hero-body">
+			<div class="container">
+				<h1 class="title is-1">
+					文字化け変換アプリ
+				</h1>
+
+				<h2 class="subtitle is-4">
+					RTAで作りました。
+				</h2>
+			</div>
+		</div>
+	</section>
+
+	<section class="mojibake">
+		<div class="container">
+			<h1 class="title is-3">文字化けさせる</h1>
+			<div class="container block">
+				<p class="title is-5">文字化けさせたい文字</p>
+				<textarea class="textarea is-primary" placeholder="文字化けさせたい文字をいれてね!" id="encode-in"></textarea>
+			</div>
+
+			<div class="container block">
+				<p class="title is-5">文字化け後の文字</p>
+				<textarea class="textarea is-primary" placeholder="文字化けさせた後の文字だよ!" id="encode-out"></textarea>
+			</div>
+
+			<button class="button is-primary" id="encode-btn">文字化け!</button>
+		</div>
+	</section>
+
+	<script type="text/javascript" src="encoding.min.js"></script>
+	<script type="text/javascript" src="mojibake.js"></script>
+</body>
+</html>
