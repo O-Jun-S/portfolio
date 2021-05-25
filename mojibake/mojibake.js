@@ -7,6 +7,6 @@ encode_btn.addEventListener("click", (e) => {
     console.log(input);
     let input_array = input.split('').map((v) => v.charCodeAt());
     let encoded_array = Encoding.convert(input_array, "SJIS", "UNICODE").map((v) => String.fromCharCode(v));
-    let encoded_string = encode_array.join(",");
+    let encoded_string = encoded_array.join(",");
     encode_out.value = encoded;
 })
